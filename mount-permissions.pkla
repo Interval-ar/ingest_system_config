@@ -1,0 +1,6 @@
+[Mounting, checking, etc. of internal drives]
+Identity=unix-group:admin;unix-group:sudo
+Action=org.freedesktop.udisks2.filesystem-mount-other-seat;
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
