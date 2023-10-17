@@ -1,24 +1,22 @@
 #!/bin/bash
 # Bash Menu Script Example
 
+echo "Elegi la version de polkit"
 PS3='Please enter your choice: '
-options=("Polkit version < 0.106" "polkit version ≥ 0.106" "Quit")
+options=("0.106" "0.106" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "Polkit version < 0.106")
-            echo "mover archivo .pkla"
+        "0.106")
+            mkdir -p  /etc/polkit-1/localauthority/10-vendor.d/
             ;;
-        "Polkit version ≥ 0.106")
-            echo "mover archivo .rules"
-            ;;
+        "0.106")
+            mkdir -p -v /etc/polkit-1/rules.d/;;
+	    echo "test";;
         "Quit")
             break
             ;;
         *) echo "invalid option $REPLY";;
     esac
 done
-
-
-
 
